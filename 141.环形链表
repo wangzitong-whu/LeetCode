@@ -13,4 +13,14 @@ class Solution:
             seen.add(head)
             head = head.next
         return False
-        
+
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        slow = fast = head
+        while fast is not None and  fast.next is not None: #这个容易出错,两个都需要判断是否存在 
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
+                return True
+        return False
+#2026-1-4复习
