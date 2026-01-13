@@ -1,0 +1,17 @@
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        p0,p = 0,0
+        p1 = len(nums) - 1
+        while p <= p1:
+            if nums[p] == 0:
+                self.swap(nums,p,p0)
+                p0 += 1
+            if nums[p] == 2:
+                self.swap(nums,p,p1)
+                p1 -= 1
+            if nums[p] == 1:
+                p += 1
+            if p < p0:
+                p = p0
+    def swap(self,nums,i,j):
+        nums[i],nums[j] = nums[j],nums[i]
