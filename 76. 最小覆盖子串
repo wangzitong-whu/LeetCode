@@ -13,7 +13,7 @@ class Solution:
                 window[c] = window.get(c,0)+1
                 if window[c] == need[c]:
                     val += 1
-            while val == len(need):
+            while val == len(need): #需要在这里进行循环判断是否是最短子串
                 # 子串更新
                 if  right - left < length:
                     start = left
